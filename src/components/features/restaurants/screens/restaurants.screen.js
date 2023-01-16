@@ -1,42 +1,36 @@
-import { SafeAreaView, StatusBar, StyleSheet, View } from 'react-native';
+import { FlatList } from 'react-native';
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
+import styled from 'styled-components/native';
 
-import MealsList from '../../../MealsList';
 import Search from '../../../Search';
 import RestaurantInfo from '../components/restaurent-info.component';
+import { SafeArea } from '../../../utility/safe-area.component';
 
+const SearchView = styled.View`
+    background-color: ${(props) => props.theme.colors.bg.secondary}
+    padding: ${(props) => props.theme.space[3]}
+    justify-content: center`;
+const ListView = styled.View`
+    background-color: ${(props) => props.theme.colors.bg.primary}
+    flex: 1
+    padding: ${(props) => props.theme.space[3]}`;
+const RestaurantList = styled(FlatList).attrs({
+  contentContainerStyle: { padding: 16 },
+})``;
 const RestaurantScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.search}>
+    <SafeArea>
+      <SearchView>
         <Search />
-      </View>
-      <View style={styles.list}>
-        <RestaurantInfo />
-      </View>
+      </SearchView>
+      <RestaurantList
+        data={[{ name: 1 }, { name: 2 }, { name: 3 }]}
+        renderItem={() => <RestaurantInfo />}
+        keyExtractor={(item) => item.name}
+      />
       <ExpoStatusBar style="auto" />
-    </SafeAreaView>
+    </SafeArea>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'black',
-    flexDirection: 'column',
-    marginTop: StatusBar.currentHeight,
-  },
-  search: {
-    backgroundColor: 'red',
-    padding: 3,
-    justifyContent: 'center',
-  },
-  list: {
-    backgroundColor: 'green',
-    flex: 1,
-    marginTop: 2,
-    padding: 5,
-  },
-});
 
 export default RestaurantScreen;

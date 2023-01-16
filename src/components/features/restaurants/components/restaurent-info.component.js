@@ -1,51 +1,60 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
-import { Avatar, Card } from 'react-native-paper';
+import { SvgXml } from 'react-native-svg';
+
+import star from '../../../../../assets/star';
+import open from '../../../../../assets/open';
+import { Spacer } from '../../../spacer/spacer.component';
+import { Text } from '../../../typography/text.component';
+import {
+  Address,
+  Icon,
+  Info,
+  Rating,
+  RestaurantCard,
+  RestaurantCardCover,
+  Section,
+  SectionEnd,
+} from './restaurant-info-card.styles';
 
 const RestaurantInfo = ({ restaurant = {} }) => {
   const {
-    name = 'Some Restau',
-    icon,
-    photos = ['https://picsum.photos/700'],
+    name = 'Some Restaurant',
+    icon = 'https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png',
+    photos = [
+      'https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg',
+    ],
     address = '100 some street, Akbou',
     isOpenNow = true,
     rating = 4,
-    isClosedTemporarily,
+    isClosedTemporarily = true,
     isCafe = true,
   } = restaurant;
 
-  let stars = [];
-  for (let i = 0; i < rating; i++) {
-    stars.push(<Avatar.Icon size={24} icon="star" />);
-  }
+  const ratingArray = Array.from(new Array(Math.floor(rating)));
+
   return (
-    <Card style={styles.card} elevation={5}>
-      <Card.Cover style={styles.image} source={{ uri: photos[0] }} />
-      <Card.Title title={name} />
-      <Card.Content>
-        <Text variant="titleLarge">{stars}</Text>
-        <Avatar.Icon size={24} icon={isOpenNow ? 'folder' : 'mdiHanger '} />
-        <Text variant="titleLarge">{address}</Text>
-      </Card.Content>
-    </Card>
+    <RestaurantCard elevation={5}>
+      <RestaurantCardCover source={{ uri: photos[0] }} key={name} />
+      <Info>
+        <Text variant="label">{name}</Text>
+        <Section>
+          <Rating>
+            {ratingArray.map(() => (
+              <SvgXml xml={star} key={Math.random()} width={20} height={20} />
+            ))}
+          </Rating>
+          <SectionEnd>
+            {isClosedTemporarily && <Text variant="error">CLOSED TEMPORARILY</Text>}
+            <Spacer position="left" size="large">
+              {isOpenNow && !isClosedTemporarily && <SvgXml xml={open} width={20} height={20} />}
+            </Spacer>
+            <Spacer position="left" size="large">
+              <Icon source={{ uri: icon }} />
+            </Spacer>
+          </SectionEnd>
+        </Section>
+        <Address>{address}</Address>
+      </Info>
+    </RestaurantCard>
   );
 };
-
-const styles = StyleSheet.create({
-  card: { backgroundColor: 'white' },
-  image: {
-    padding: 20,
-    backgroundColor: 'white',
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 24,
-  },
-  adress: {
-    fontSize: 16,
-  },
-  info: {
-    flexDirection: 'row',
-  },
-});
-
 export default RestaurantInfo;
