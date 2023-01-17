@@ -26,7 +26,7 @@ const RestaurantInfo = ({ restaurant = {} }) => {
     isOpenNow = true,
     rating = 4,
     isClosedTemporarily = true,
-    isCafe = true,
+    placeId,
   } = restaurant;
 
   const ratingArray = Array.from(new Array(Math.floor(rating)));
@@ -38,8 +38,8 @@ const RestaurantInfo = ({ restaurant = {} }) => {
         <Text variant="label">{name}</Text>
         <Section>
           <Rating>
-            {ratingArray.map(() => (
-              <SvgXml xml={star} key={Math.random()} width={20} height={20} />
+            {ratingArray.map((_, i) => (
+              <SvgXml xml={star} key={`star-${placeId}-${i}`} width={20} height={20} />
             ))}
           </Rating>
           <SectionEnd>
