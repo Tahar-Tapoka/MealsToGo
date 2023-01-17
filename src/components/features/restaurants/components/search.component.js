@@ -13,9 +13,9 @@ const Search = () => {
   const locationContext = useContext(LocationContext);
   const [searchQuery, setSearchQuery] = useState(locationContext.keyword);
 
-  useEffect(() => {
-    locationContext.search(searchQuery);
-  }, []);
+  // useEffect(() => {
+  //   locationContext.search(searchQuery);
+  // }, []);
 
   const onChangeSearch = (query) => setSearchQuery(query);
 
