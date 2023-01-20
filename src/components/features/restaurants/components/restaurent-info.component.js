@@ -14,6 +14,8 @@ import {
   Section,
   SectionEnd,
 } from './restaurant-info-card.styles';
+import { Favourite } from '../../../favourites/favourite.component';
+import { View } from 'react-native';
 
 const RestaurantInfo = ({ restaurant = {} }) => {
   const {
@@ -29,11 +31,25 @@ const RestaurantInfo = ({ restaurant = {} }) => {
     placeId,
   } = restaurant;
 
+  // const {
+  //   name,
+  //   icon,
+  //   photos = [],
+  //   address,
+  //   isOpenNow,
+  //   rating,
+  //   isClosedTemporarily,
+  //   placeId,
+  // } = restaurant;
   const ratingArray = Array.from(new Array(Math.floor(rating)));
 
   return (
     <RestaurantCard elevation={5}>
-      <RestaurantCardCover source={{ uri: photos[0] }} key={name} />
+      <View>
+        <Favourite restaurant={restaurant} />
+        <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
+      </View>
+
       <Info>
         <Text variant="label">{name}</Text>
         <Section>

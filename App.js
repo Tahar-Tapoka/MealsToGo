@@ -1,67 +1,64 @@
+import 'react-native-gesture-handler';
 import { ThemeProvider } from 'styled-components/native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Text, View } from 'react-native';
 import { useFonts as useOswald, Oswald_400Regular } from '@expo-google-fonts/oswald';
 import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato';
-import { Ionicons } from '@expo/vector-icons';
+import { initializeApp } from 'firebase/app';
 
-import RestaurantScreen from './src/components/features/restaurants/screens/restaurants.screen';
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { theme } from './src/infrastructure/theme';
 import { RestaurantContextProvider } from './src/services/restaurants/restaurant.context';
 import { LocationContextProvider } from './src/services/location/location.context';
+import { Navigation } from './src/infrastructure/navigation';
+import { FavouritesContextProvider } from './src/services/favourites/favourites.context';
+import { useEffect, useState } from 'react';
+import { AuthContextProvider } from './src/services/authentication/authentication.context';
+
+// Initialize Firebase
+// const firebaseConfig = {
+//   apiKey: 'AIzaSyCa93HgGObJBbLVOZQs_HIpZuRqQHnDI0M',
+//   authDomain: 'mealstogo-5621c.firebaseapp.com',
+//   projectId: 'mealstogo-5621c',
+//   storageBucket: 'mealstogo-5621c.appspot.com',
+//   messagingSenderId: '938103308440',
+//   appId: '1:938103308440:web:6f70cfe13e0116a2a410ed',
+// };
+
+// const app = initializeApp(firebaseConfig);
+// const auth = getAuth(app);
 export default function App() {
+  // const [isAuth, setIsAuth] = useState(false);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     signInWithEmailAndPassword(auth, 'email@taha.taha', 'password')
+  //       .then((userCredential) => {
+  //         // Signed inn
+  //         const user = userCredential.user;
+  //         console.log(user);
+  //         setIsAuth(true);
+  //       })
+  //       .catch((error) => {
+  //         const errorCode = error.code;
+  //         const errorMessage = error.message;
+  //         console.log(errorCode, '  ', errorMessage);
+  //       });
+  //   }, 2000);
+  // }, []);
   const [oswaldLoaded] = useOswald({ Oswald_400Regular });
   const [latoLoaded] = useLato({ Lato_400Regular });
   if (!oswaldLoaded || !latoLoaded) return null;
-
-  function MapsScreen() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>This is google maaaaps!</Text>
-      </View>
-    );
-  }
-
-  function SettingsScreen() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Settings!</Text>
-      </View>
-    );
-  }
-  const Tab = createBottomTabNavigator();
+  //if (!isAuth) return null;
 
   return (
     <ThemeProvider theme={theme}>
-      <LocationContextProvider>
-        <RestaurantContextProvider>
-          <NavigationContainer>
-            <Tab.Navigator
-              screenOptions={({ route }) => ({
-                tabBarIcon: ({ focused, color, size }) => {
-                  let iconName;
-                  if (route.name === 'Restaurants') {
-                    iconName = focused ? 'restaurant' : 'restaurant-outline';
-                  } else if (route.name === 'Settings') {
-                    iconName = focused ? 'settings' : 'settings-outline';
-                  } else if (route.name === 'Maps') {
-                    iconName = focused ? 'map' : 'map-outline';
-                  }
-                  return <Ionicons name={iconName} size={size} color={color} />;
-                },
-                tabBarActiveTintColor: 'tomato',
-                tabBarInactiveTintColor: 'gray',
-                headerShown: false,
-              })}
-            >
-              <Tab.Screen name="Restaurants" component={RestaurantScreen} />
-              <Tab.Screen name="Maps" component={MapsScreen} />
-              <Tab.Screen name="Settings" component={SettingsScreen} />
-            </Tab.Navigator>
-          </NavigationContainer>
-        </RestaurantContextProvider>
-      </LocationContextProvider>
+      <AuthContextProvider>
+        <FavouritesContextProvider>
+          <LocationContextProvider>
+            <RestaurantContextProvider>
+              <Navigation />
+            </RestaurantContextProvider>
+          </LocationContextProvider>
+        </FavouritesContextProvider>
+      </AuthContextProvider>
     </ThemeProvider>
   );
 }
