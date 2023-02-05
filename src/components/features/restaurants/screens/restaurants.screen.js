@@ -10,8 +10,9 @@ import { ActivityIndicator, MD2Colors } from 'react-native-paper';
 import Search from '../components/search.component';
 import { FavouritesContext } from '../../../../services/favourites/favourites.context';
 import { FavouritesBar } from '../../../favourites/favourites-bar.component';
+import { FadeInView } from '../../../animations/fade.animation';
 
-const RestaurantList = styled(FlatList).attrs({
+export const RestaurantList = styled(FlatList).attrs({
   contentContainerStyle: { padding: 16 },
 })``;
 
@@ -35,21 +36,23 @@ export const RestaurantScreen = ({ navigation }) => {
         </View>
       )}
       {!restaurantContext.isLoading && (
-        <RestaurantList
-          data={restaurantContext.restaurants}
-          renderItem={({ item }) => {
-            return (
-              <TouchableOpacity
-                onPress={() => {
-                  navigation.navigate('RestaurantDetail', { item });
-                }}
-              >
-                <RestaurantInfo restaurant={item} />
-              </TouchableOpacity>
-            );
-          }}
-          key={({ item }) => item.placeId}
-        />
+        <FadeInView>
+          <RestaurantList
+            data={restaurantContext.restaurants}
+            renderItem={({ item }) => {
+              return (
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('RestaurantDetail', { item });
+                  }}
+                >
+                  <RestaurantInfo restaurant={item} />
+                </TouchableOpacity>
+              );
+            }}
+            key={({ item }) => item.placeId}
+          />
+        </FadeInView>
       )}
       <ExpoStatusBar style="auto" />
     </SafeArea>
