@@ -1,5 +1,23 @@
 import { createContext, useState } from 'react';
-import { loginRequest, registerRequest } from './authentication.service';
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+} from 'firebase/auth';
+import { initializeApp } from 'firebase/app';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyCa93HgGObJBbLVOZQs_HIpZuRqQHnDI0M',
+  authDomain: 'mealstogo-5621c.firebaseapp.com',
+  projectId: 'mealstogo-5621c',
+  storageBucket: 'mealstogo-5621c.appspot.com',
+  messagingSenderId: '938103308440',
+  appId: '1:938103308440:web:6f70cfe13e0116a2a410ed',
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 export const AuthContext = createContext();
 
@@ -8,10 +26,18 @@ export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState();
 
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      setUser(user);
+    }
+    setIsLoading(false);
+  });
+
   const onLogin = (email, password) => {
     setIsLoading(true);
-    loginRequest(email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then((u) => {
+        const user = u.user;
         setUser(u);
       })
       .catch((e) => {
@@ -20,19 +46,29 @@ export const AuthContextProvider = ({ children }) => {
     setIsLoading(false);
   };
 
-  const onLogout = () => {};
+  const onLogout = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        setUser(null);
+      })
+      .catch((error) => {
+        // An error happened.
+        setError(error.toString());
+      });
+  };
 
   const onRegister = (email, password, repeatedPassword) => {
+    setIsLoading(true);
     if (password === repeatedPassword) {
-      setIsLoading(true);
-      registerRequest(email, password)
+      createUserWithEmailAndPassword(auth, email, password)
         .then((u) => {
           setUser(u);
         })
         .catch((e) => {
           setError(e.toString());
         });
-    } else setError('Please check ur password agaian');
+    } else setError('Please check ur password pls!');
     setIsLoading(false);
   };
   return (

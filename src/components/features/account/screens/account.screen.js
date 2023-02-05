@@ -1,9 +1,11 @@
+import LottieView from 'lottie-react-native';
 import { Text, View } from 'react-native';
 
 import { Spacer } from '../../../spacer/spacer.component';
 import {
   AccountBackground,
   AccountContainer,
+  AnimationContainer,
   AuthButton,
   Title,
 } from '../components/account.styles';
@@ -11,6 +13,16 @@ import {
 export const AccountScreen = ({ navigation }) => {
   return (
     <AccountBackground>
+      <AnimationContainer>
+        <LottieView
+          autoPlay
+          key="animation"
+          loop
+          resizeMode="cover"
+          // Find more Lottie files at https://lottiefiles.com/featured
+          source={require('../../../../../assets/watermelon.json')}
+        />
+      </AnimationContainer>
       <Title>Meals to Go</Title>
       <Spacer size="large" />
       <AccountContainer>
@@ -29,7 +41,7 @@ export const AccountScreen = ({ navigation }) => {
             navigation.navigate('Register');
           }}
         >
-          Create an account
+          New account
         </AuthButton>
       </AccountContainer>
       <View></View>

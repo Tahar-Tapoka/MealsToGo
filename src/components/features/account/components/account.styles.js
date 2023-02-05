@@ -34,6 +34,21 @@ textAlign: center
 backgroundColor: #000000c0
 width: 500px`;
 
+export const ErrorContainer = styled.View`
+max-width: 300px
+align-items: center
+align-self:center
+margine-top: ${(props) => props.theme.space[2]}
+margine-bottom: ${(props) => props.theme.space[2]}
+`;
+export const AnimationContainer = styled.View`
+width: 100%
+height: 40%
+position: absolute
+top: 30px
+padding: ${(props) => props.theme.space[2]}
+`;
+
 export const AccountBackground = ({ children }) => (
   <ImageBackground
     source={{

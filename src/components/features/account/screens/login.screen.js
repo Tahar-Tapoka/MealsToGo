@@ -7,6 +7,7 @@ import {
   AccountBackground,
   AccountContainer,
   AuthButton,
+  ErrorContainer,
   Title,
 } from '../components/account.styles';
 
@@ -14,13 +15,9 @@ export const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { onLogin, error } = useContext(AuthContext);
+  const { onLogin, error, isLoading } = useContext(AuthContext);
   return (
     <AccountBackground>
-      {/* <TextInput
-        label="Email"
-        render={(props) => <TextInputMask {...props} mask="[*]@[*].[*]" />}
-      /> */}
       <Title>Meals to Go</Title>
       <Spacer size="large" />
       <AccountContainer>
@@ -43,10 +40,19 @@ export const LoginScreen = ({ navigation }) => {
         />
         <Spacer size="large" />
         <Spacer size="large" />
-        {error && <Text variant="error">{error}</Text>}
-        <AuthButton icon="login" onPress={() => onLogin(email, password)}>
-          Login
-        </AuthButton>
+        {error && (
+          <ErrorContainer>
+            <Text variant="error">{error}</Text>
+          </ErrorContainer>
+        )}
+        {!isLoading ? (
+          <AuthButton icon="login" onPress={() => onLogin(email, password)}>
+            Login
+          </AuthButton>
+        ) : (
+          <ActivityIndicator animating={true} color={MD2Colors.red800} />
+        )}
+
         <Spacer size="large" />
         <AuthButton
           icon="backburger"
