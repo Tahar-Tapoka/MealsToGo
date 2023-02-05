@@ -1,4 +1,7 @@
-import { useContext } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useFocusEffect } from '@react-navigation/native';
+import { useCallback, useContext, useEffect, useState } from 'react';
+import { TouchableOpacity } from 'react-native';
 import { Avatar, List } from 'react-native-paper';
 import styled from 'styled-components';
 import { AuthContext } from '../../../../services/authentication/authentication.context';
@@ -6,20 +9,41 @@ import { Spacer } from '../../../spacer/spacer.component';
 import { Text } from '../../../typography/text.component';
 import { SafeArea } from '../../../utility/safe-area.component';
 
+const SettingsItem = styled(List.Item)`
+  padding: ${(props) => props.theme.space[3]};
+`;
+const AvatarContainer = styled.View`
+  align-items: center;
+`;
 export default function SettingsScreen({ navigation }) {
   const { onLogout, user } = useContext(AuthContext);
+  const [photo, setPhoto] = useState();
 
-  const SettingsItem = styled(List.Item)`
-    padding: ${(props) => props.theme.space[3]};
-  `;
-  const AvatarContainer = styled.View`
-    align-items: center;
-  `;
+  const loadPic = async (Curruser) => {
+    const photoUri = await AsyncStorage.getItem(`${Curruser.uid}-photo`);
+    setPhoto(photoUri);
+  };
+
+  useFocusEffect(
+    useCallback(() => {
+      loadPic(user);
+    }, [user])
+  );
 
   return (
     <SafeArea>
       <AvatarContainer>
-        <Avatar.Icon size={180} icon="human" />
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('CameraScreen');
+          }}
+        >
+          {!photo ? (
+            <Avatar.Icon size={180} icon="human" />
+          ) : (
+            <Avatar.Image size={180} source={{ uri: photo }} />
+          )}
+        </TouchableOpacity>
         <Spacer position="top" size="large" />
         <Text variant="label">{user.email}</Text>
       </AvatarContainer>
