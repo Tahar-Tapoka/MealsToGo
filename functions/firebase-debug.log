@@ -1,0 +1,363 @@
+[debug] [2023-02-07T13:43:26.292Z] ----------------------------------------------------------------------
+[debug] [2023-02-07T13:43:26.293Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Web-Desk\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2023-02-07T13:43:26.294Z] CLI Version:   11.22.0
+[debug] [2023-02-07T13:43:26.294Z] Platform:      win32
+[debug] [2023-02-07T13:43:26.294Z] Node Version:  v18.14.0
+[debug] [2023-02-07T13:43:26.295Z] Time:          Tue Feb 07 2023 14:43:26 GMT+0100 (Central European Standard Time)
+[debug] [2023-02-07T13:43:26.295Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-07T13:43:26.345Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-07T13:43:26.345Z] > authorizing via signed-in user (taharboussak@gmail.com)
+[debug] [2023-02-07T13:43:26.345Z] [iam] checking project mealstogo-5621c for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-02-07T13:43:26.347Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mealstogo-5621c:testIamPermissions [none]
+[debug] [2023-02-07T13:43:26.347Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mealstogo-5621c:testIamPermissions x-goog-quota-user=projects/mealstogo-5621c
+[debug] [2023-02-07T13:43:26.347Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mealstogo-5621c:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-02-07T13:43:27.350Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mealstogo-5621c:testIamPermissions 200
+[debug] [2023-02-07T13:43:27.350Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mealstogo-5621c:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-02-07T13:43:27.350Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/mealstogo-5621c/serviceAccounts/mealstogo-5621c@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-02-07T13:43:27.350Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/mealstogo-5621c/serviceAccounts/mealstogo-5621c@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-02-07T13:43:28.282Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/mealstogo-5621c/serviceAccounts/mealstogo-5621c@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-02-07T13:43:28.282Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/mealstogo-5621c/serviceAccounts/mealstogo-5621c@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'mealstogo-5621c'...
+[info] 
+[info] i  deploying functions 
+[debug] [2023-02-07T13:43:28.285Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c [none]
+[debug] [2023-02-07T13:43:28.900Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c 200
+[debug] [2023-02-07T13:43:28.900Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c {"projectId":"mealstogo-5621c","projectNumber":"938103308440","displayName":"MealsToGo","name":"projects/mealstogo-5621c","resources":{"hostingSite":"mealstogo-5621c"},"state":"ACTIVE","etag":"1_d94a8d79-f3ac-4bc5-bc78-038f4d571e59"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-02-07T13:43:28.901Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mealstogo-5621c/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-02-07T13:43:28.901Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mealstogo-5621c/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/mealstogo-5621c
+[debug] [2023-02-07T13:43:28.902Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mealstogo-5621c/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-02-07T13:43:28.902Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mealstogo-5621c/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/mealstogo-5621c
+[debug] [2023-02-07T13:43:28.903Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mealstogo-5621c/services/cloudbuild.googleapis.com [none]
+[debug] [2023-02-07T13:43:28.903Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mealstogo-5621c/services/cloudbuild.googleapis.com x-goog-quota-user=projects/mealstogo-5621c
+[debug] [2023-02-07T13:43:28.904Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/mealstogo-5621c/services/artifactregistry.googleapis.com [none]
+[debug] [2023-02-07T13:43:28.904Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/mealstogo-5621c/services/artifactregistry.googleapis.com x-goog-quota-user=projects/mealstogo-5621c
+[debug] [2023-02-07T13:43:30.081Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mealstogo-5621c/services/runtimeconfig.googleapis.com 200
+[debug] [2023-02-07T13:43:30.081Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mealstogo-5621c/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-02-07T13:43:30.082Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mealstogo-5621c/services/cloudfunctions.googleapis.com 200
+[debug] [2023-02-07T13:43:30.082Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mealstogo-5621c/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-02-07T13:43:30.102Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mealstogo-5621c/services/artifactregistry.googleapis.com 200
+[debug] [2023-02-07T13:43:30.102Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mealstogo-5621c/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-02-07T13:43:30.106Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/mealstogo-5621c/services/cloudbuild.googleapis.com 200
+[debug] [2023-02-07T13:43:30.106Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/mealstogo-5621c/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-02-07T13:43:30.107Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c/adminSdkConfig [none]
+[debug] [2023-02-07T13:43:30.533Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c/adminSdkConfig 200
+[debug] [2023-02-07T13:43:30.533Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c/adminSdkConfig {"projectId":"mealstogo-5621c","storageBucket":"mealstogo-5621c.appspot.com"}
+[debug] [2023-02-07T13:43:30.534Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mealstogo-5621c/configs [none]
+[debug] [2023-02-07T13:43:31.061Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mealstogo-5621c/configs 200
+[debug] [2023-02-07T13:43:31.061Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mealstogo-5621c/configs {"configs":[{"name":"projects/mealstogo-5621c/configs/google"}]}
+[debug] [2023-02-07T13:43:31.063Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mealstogo-5621c/configs/google/variables [none]
+[debug] [2023-02-07T13:43:31.560Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mealstogo-5621c/configs/google/variables 200
+[debug] [2023-02-07T13:43:31.560Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mealstogo-5621c/configs/google/variables {"variables":[{"name":"projects/mealstogo-5621c/configs/google/variables/key","updateTime":"2023-02-07T12:36:44.791384187Z"}]}
+[debug] [2023-02-07T13:43:31.561Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mealstogo-5621c/configs/google/variables/key [none]
+[debug] [2023-02-07T13:43:32.052Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mealstogo-5621c/configs/google/variables/key 200
+[debug] [2023-02-07T13:43:32.052Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/mealstogo-5621c/configs/google/variables/key {"name":"projects/mealstogo-5621c/configs/google/variables/key","updateTime":"2023-02-07T12:36:44.791384187Z","text":"AIzaSyDZTeDRdQm0coKkQ5MncsOziwFSVI3U5yA"}
+[debug] [2023-02-07T13:43:32.053Z] Validating nodejs source
+[debug] [2023-02-07T13:43:33.163Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.3.26",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^4.2.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2023-02-07T13:43:33.163Z] Building nodejs source
+[debug] [2023-02-07T13:43:33.164Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-02-07T13:43:33.169Z] Found firebase-functions binary at 'C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions\node_modules\.bin\firebase-functions'
+[debug] [2023-02-07T13:43:33.307Z] Serving at port 8780
+
+[debug] [2023-02-07T13:43:33.522Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"geocode"},"placesNearby":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"placesNearby"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-02-07T13:43:33.527Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions (71.8 KB) for uploading 
+[debug] [2023-02-07T13:43:33.576Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/mealstogo-5621c/locations/-/functions [none]
+[debug] [2023-02-07T13:43:34.380Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/mealstogo-5621c/locations/-/functions 200
+[debug] [2023-02-07T13:43:34.380Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/mealstogo-5621c/locations/-/functions {"functions":[{"name":"projects/mealstogo-5621c/locations/us-central1/functions/geocode","httpsTrigger":{"url":"https://us-central1-mealstogo-5621c.cloudfunctions.net/geocode","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"geocode","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"mealstogo-5621c@appspot.gserviceaccount.com","updateTime":"2023-02-07T12:41:24.525Z","versionId":"2","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"36223e67999fcf0851a74a5c200b740321836f12"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-829909479488.us-central1.cloudfunctions.appspot.com/51478afb-ec80-4cd2-b6a5-7f41494886a0.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"mealstogo-5621c\",\"storageBucket\":\"mealstogo-5621c.appspot.com\"}","GCLOUD_PROJECT":"mealstogo-5621c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/mealstogo-5621c/locations/us-central1/functions/placesNearby"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"f99e45ab-c1f4-483d-b486-909be3f32171","buildName":"projects/938103308440/locations/us-central1/builds/f99e45ab-c1f4-483d-b486-909be3f32171","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/mealstogo-5621c/locations/us-central1/functions/placesNearby","httpsTrigger":{"url":"https://us-central1-mealstogo-5621c.cloudfunctions.net/placesNearby","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"placesNearby","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"mealstogo-5621c@appspot.gserviceaccount.com","updateTime":"2023-02-07T09:08:25.453Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"3c56299ebe30c93e0c2c70993f137dee9cbe0371"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-829909479488.us-central1.cloudfunctions.appspot.com/d476795d-d3f6-4ad0-af11-25856a0b1b63.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"mealstogo-5621c\",\"storageBucket\":\"mealstogo-5621c.appspot.com\"}","GCLOUD_PROJECT":"mealstogo-5621c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/mealstogo-5621c/locations/us-central1/functions/placesNearby"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"a627eb1a-1dcf-43a8-b245-08054740bfbf","buildName":"projects/938103308440/locations/us-central1/builds/a627eb1a-1dcf-43a8-b245-08054740bfbf","dockerRegistry":"ARTIFACT_REGISTRY"}]}
+[debug] [2023-02-07T13:43:34.381Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/mealstogo-5621c/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-02-07T13:43:35.618Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/mealstogo-5621c/locations/-/functions 200
+[debug] [2023-02-07T13:43:35.618Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/mealstogo-5621c/locations/-/functions {}
+[debug] [2023-02-07T13:43:35.621Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c [none]
+[debug] [2023-02-07T13:43:36.055Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c 200
+[debug] [2023-02-07T13:43:36.056Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c {"projectId":"mealstogo-5621c","projectNumber":"938103308440","displayName":"MealsToGo","name":"projects/mealstogo-5621c","resources":{"hostingSite":"mealstogo-5621c"},"state":"ACTIVE","etag":"1_d94a8d79-f3ac-4bc5-bc78-038f4d571e59"}
+[debug] [2023-02-07T13:43:36.056Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c [none]
+[debug] [2023-02-07T13:43:36.500Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c 200
+[debug] [2023-02-07T13:43:36.500Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c {"projectId":"mealstogo-5621c","projectNumber":"938103308440","displayName":"MealsToGo","name":"projects/mealstogo-5621c","resources":{"hostingSite":"mealstogo-5621c"},"state":"ACTIVE","etag":"1_d94a8d79-f3ac-4bc5-bc78-038f4d571e59"}
+[debug] [2023-02-07T13:43:36.502Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/mealstogo-5621c/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-02-07T13:43:36.502Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/mealstogo-5621c/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2023-02-07T13:43:37.241Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/mealstogo-5621c/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-02-07T13:43:37.241Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/mealstogo-5621c/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-829909479488.us-central1.cloudfunctions.appspot.com/ee44abb3-b08a-4055-911f-4446dc2df4bf.zip?GoogleAccessId=service-938103308440@gcf-admin-robot.iam.gserviceaccount.com&Expires=1675779216&Signature=U2D6lCktqoCwuvm5%2BnOf0NUtzrEA032viS%2BunwglravOPcComlDCX0u5x2Y7NvUufn7%2F5rNpflyHKpqjAqi%2FVsgjn37hBvQgbMiqm5dDJkn%2FBUHaTs%2Fj%2BP0O18x7rTilvWntYRhvGqY%2BED7tWTdITuFvmuxcgjuMpBWzK0UIelFyZXHdbnwwFpDGUxsAVjWu47SGcgFQAgU45uAmD5PdqDQQ8XNNZIEimFJUPMtxIjjr73ZHunjAKV8SlFI9scyxH3blDyYxJaPjc40MuA9EQ3tWJkbqlpBvUOaHi1xwbpA00zHnp4chZLslSv6TWs92Gb3lLT4iRUiU3P3c%2Fb11Cw%3D%3D"}
+[debug] [2023-02-07T13:43:37.242Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-829909479488.us-central1.cloudfunctions.appspot.com/ee44abb3-b08a-4055-911f-4446dc2df4bf.zip GoogleAccessId=service-938103308440%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1675779216&Signature=U2D6lCktqoCwuvm5%2BnOf0NUtzrEA032viS%2BunwglravOPcComlDCX0u5x2Y7NvUufn7%2F5rNpflyHKpqjAqi%2FVsgjn37hBvQgbMiqm5dDJkn%2FBUHaTs%2Fj%2BP0O18x7rTilvWntYRhvGqY%2BED7tWTdITuFvmuxcgjuMpBWzK0UIelFyZXHdbnwwFpDGUxsAVjWu47SGcgFQAgU45uAmD5PdqDQQ8XNNZIEimFJUPMtxIjjr73ZHunjAKV8SlFI9scyxH3blDyYxJaPjc40MuA9EQ3tWJkbqlpBvUOaHi1xwbpA00zHnp4chZLslSv6TWs92Gb3lLT4iRUiU3P3c%2Fb11Cw%3D%3D
+[debug] [2023-02-07T13:43:37.242Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-829909479488.us-central1.cloudfunctions.appspot.com/ee44abb3-b08a-4055-911f-4446dc2df4bf.zip [stream]
+[debug] [2023-02-07T13:43:37.894Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-829909479488.us-central1.cloudfunctions.appspot.com/ee44abb3-b08a-4055-911f-4446dc2df4bf.zip 200
+[debug] [2023-02-07T13:43:37.895Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-829909479488.us-central1.cloudfunctions.appspot.com/ee44abb3-b08a-4055-911f-4446dc2df4bf.zip [omitted]
+[info] +  functions: functions folder uploaded successfully 
+[info] i  functions: updating Node.js 18 function geocode(us-central1)... 
+[info] i  functions: updating Node.js 18 function placesNearby(us-central1)... 
+[debug] [2023-02-07T13:43:37.904Z] >>> [apiv2][query] PATCH https://cloudfunctions.googleapis.com/v1/projects/mealstogo-5621c/locations/us-central1/functions/geocode updateMask=name%2CsourceUploadUrl%2CentryPoint%2Cruntime%2CdockerRegistry%2Clabels%2ChttpsTrigger.securityLevel%2CminInstances%2CmaxInstances%2CingressSettings%2CenvironmentVariables%2CserviceAccountEmail%2CavailableMemoryMb%2Ctimeout%2CvpcConnector%2CvpcConnectorEgressSettings%2CsourceToken
+[debug] [2023-02-07T13:43:37.904Z] >>> [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v1/projects/mealstogo-5621c/locations/us-central1/functions/geocode {"name":"projects/mealstogo-5621c/locations/us-central1/functions/geocode","sourceUploadUrl":"https://storage.googleapis.com/uploads-829909479488.us-central1.cloudfunctions.appspot.com/ee44abb3-b08a-4055-911f-4446dc2df4bf.zip?GoogleAccessId=service-938103308440@gcf-admin-robot.iam.gserviceaccount.com&Expires=1675779216&Signature=U2D6lCktqoCwuvm5%2BnOf0NUtzrEA032viS%2BunwglravOPcComlDCX0u5x2Y7NvUufn7%2F5rNpflyHKpqjAqi%2FVsgjn37hBvQgbMiqm5dDJkn%2FBUHaTs%2Fj%2BP0O18x7rTilvWntYRhvGqY%2BED7tWTdITuFvmuxcgjuMpBWzK0UIelFyZXHdbnwwFpDGUxsAVjWu47SGcgFQAgU45uAmD5PdqDQQ8XNNZIEimFJUPMtxIjjr73ZHunjAKV8SlFI9scyxH3blDyYxJaPjc40MuA9EQ3tWJkbqlpBvUOaHi1xwbpA00zHnp4chZLslSv6TWs92Gb3lLT4iRUiU3P3c%2Fb11Cw%3D%3D","entryPoint":"geocode","runtime":"nodejs18","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ff8dd85e6d42beee26fe3618b97b28ec1244caf2"},"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"minInstances":null,"maxInstances":null,"ingressSettings":null,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"mealstogo-5621c\",\"storageBucket\":\"mealstogo-5621c.appspot.com\"}","GCLOUD_PROJECT":"mealstogo-5621c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/mealstogo-5621c/locations/us-central1/functions/placesNearby"},"serviceAccountEmail":null,"availableMemoryMb":null,"timeout":null,"vpcConnector":null,"vpcConnectorEgressSettings":null}
+[debug] [2023-02-07T13:43:38.812Z] <<< [apiv2][status] PATCH https://cloudfunctions.googleapis.com/v1/projects/mealstogo-5621c/locations/us-central1/functions/geocode 200
+[debug] [2023-02-07T13:43:38.812Z] <<< [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v1/projects/mealstogo-5621c/locations/us-central1/functions/geocode {"name":"operations/bWVhbHN0b2dvLTU2MjFjL3VzLWNlbnRyYWwxL2dlb2NvZGUvRktyY0xBck9WemM","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/mealstogo-5621c/locations/us-central1/functions/geocode","type":"UPDATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/mealstogo-5621c/locations/us-central1/functions/geocode","httpsTrigger":{"url":"https://us-central1-mealstogo-5621c.cloudfunctions.net/geocode","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"geocode","updateTime":"2023-02-07T12:41:24.525Z","versionId":"2","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ff8dd85e6d42beee26fe3618b97b28ec1244caf2"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-829909479488.us-central1.cloudfunctions.appspot.com/ee44abb3-b08a-4055-911f-4446dc2df4bf.zip?GoogleAccessId=service-938103308440@gcf-admin-robot.iam.gserviceaccount.com&Expires=1675779216&Signature=U2D6lCktqoCwuvm5%2BnOf0NUtzrEA032viS%2BunwglravOPcComlDCX0u5x2Y7NvUufn7%2F5rNpflyHKpqjAqi%2FVsgjn37hBvQgbMiqm5dDJkn%2FBUHaTs%2Fj%2BP0O18x7rTilvWntYRhvGqY%2BED7tWTdITuFvmuxcgjuMpBWzK0UIelFyZXHdbnwwFpDGUxsAVjWu47SGcgFQAgU45uAmD5PdqDQQ8XNNZIEimFJUPMtxIjjr73ZHunjAKV8SlFI9scyxH3blDyYxJaPjc40MuA9EQ3tWJkbqlpBvUOaHi1xwbpA00zHnp4chZLslSv6TWs92Gb3lLT4iRUiU3P3c%2Fb11Cw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"mealstogo-5621c\",\"storageBucket\":\"mealstogo-5621c.appspot.com\"}","GCLOUD_PROJECT":"mealstogo-5621c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/mealstogo-5621c/locations/us-central1/functions/placesNearby"},"runtime":"nodejs18","buildId":"f99e45ab-c1f4-483d-b486-909be3f32171","buildName":"projects/938103308440/locations/us-central1/builds/f99e45ab-c1f4-483d-b486-909be3f32171","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"3","updateTime":"2023-02-07T13:43:38Z"}}
+[debug] [2023-02-07T13:43:38.812Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/bWVhbHN0b2dvLTU2MjFjL3VzLWNlbnRyYWwxL2dlb2NvZGUvRktyY0xBck9WemM [none]
+[debug] [2023-02-07T13:43:39.251Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/bWVhbHN0b2dvLTU2MjFjL3VzLWNlbnRyYWwxL2dlb2NvZGUvRktyY0xBck9WemM 200
+[debug] [2023-02-07T13:43:39.251Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/bWVhbHN0b2dvLTU2MjFjL3VzLWNlbnRyYWwxL2dlb2NvZGUvRktyY0xBck9WemM {"name":"operations/bWVhbHN0b2dvLTU2MjFjL3VzLWNlbnRyYWwxL2dlb2NvZGUvRktyY0xBck9WemM","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/mealstogo-5621c/locations/us-central1/functions/geocode","type":"UPDATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/mealstogo-5621c/locations/us-central1/functions/geocode","httpsTrigger":{"url":"https://us-central1-mealstogo-5621c.cloudfunctions.net/geocode","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"geocode","updateTime":"2023-02-07T12:41:24.525Z","versionId":"2","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ff8dd85e6d42beee26fe3618b97b28ec1244caf2"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-829909479488.us-central1.cloudfunctions.appspot.com/ee44abb3-b08a-4055-911f-4446dc2df4bf.zip?GoogleAccessId=service-938103308440@gcf-admin-robot.iam.gserviceaccount.com&Expires=1675779216&Signature=U2D6lCktqoCwuvm5%2BnOf0NUtzrEA032viS%2BunwglravOPcComlDCX0u5x2Y7NvUufn7%2F5rNpflyHKpqjAqi%2FVsgjn37hBvQgbMiqm5dDJkn%2FBUHaTs%2Fj%2BP0O18x7rTilvWntYRhvGqY%2BED7tWTdITuFvmuxcgjuMpBWzK0UIelFyZXHdbnwwFpDGUxsAVjWu47SGcgFQAgU45uAmD5PdqDQQ8XNNZIEimFJUPMtxIjjr73ZHunjAKV8SlFI9scyxH3blDyYxJaPjc40MuA9EQ3tWJkbqlpBvUOaHi1xwbpA00zHnp4chZLslSv6TWs92Gb3lLT4iRUiU3P3c%2Fb11Cw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"mealstogo-5621c\",\"storageBucket\":\"mealstogo-5621c.appspot.com\"}","GCLOUD_PROJECT":"mealstogo-5621c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/mealstogo-5621c/locations/us-central1/functions/placesNearby"},"runtime":"nodejs18","buildId":"f99e45ab-c1f4-483d-b486-909be3f32171","buildName":"projects/938103308440/locations/us-central1/builds/f99e45ab-c1f4-483d-b486-909be3f32171","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"3","updateTime":"2023-02-07T13:43:38Z"}}
+[debug] [2023-02-07T13:43:39.753Z] [update-default-us-central1-geocode] Retrying task index 0
+[debug] [2023-02-07T13:43:39.754Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/bWVhbHN0b2dvLTU2MjFjL3VzLWNlbnRyYWwxL2dlb2NvZGUvRktyY0xBck9WemM [none]
+[debug] [2023-02-07T13:43:40.191Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/bWVhbHN0b2dvLTU2MjFjL3VzLWNlbnRyYWwxL2dlb2NvZGUvRktyY0xBck9WemM 200
+[debug] [2023-02-07T13:43:40.191Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/bWVhbHN0b2dvLTU2MjFjL3VzLWNlbnRyYWwxL2dlb2NvZGUvRktyY0xBck9WemM {"name":"operations/bWVhbHN0b2dvLTU2MjFjL3VzLWNlbnRyYWwxL2dlb2NvZGUvRktyY0xBck9WemM","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/mealstogo-5621c/locations/us-central1/functions/geocode","type":"UPDATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/mealstogo-5621c/locations/us-central1/functions/geocode","httpsTrigger":{"url":"https://us-central1-mealstogo-5621c.cloudfunctions.net/geocode","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"geocode","updateTime":"2023-02-07T12:41:24.525Z","versionId":"2","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ff8dd85e6d42beee26fe3618b97b28ec1244caf2"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-829909479488.us-central1.cloudfunctions.appspot.com/ee44abb3-b08a-4055-911f-4446dc2df4bf.zip?GoogleAccessId=service-938103308440@gcf-admin-robot.iam.gserviceaccount.com&Expires=1675779216&Signature=U2D6lCktqoCwuvm5%2BnOf0NUtzrEA032viS%2BunwglravOPcComlDCX0u5x2Y7NvUufn7%2F5rNpflyHKpqjAqi%2FVsgjn37hBvQgbMiqm5dDJkn%2FBUHaTs%2Fj%2BP0O18x7rTilvWntYRhvGqY%2BED7tWTdITuFvmuxcgjuMpBWzK0UIelFyZXHdbnwwFpDGUxsAVjWu47SGcgFQAgU45uAmD5PdqDQQ8XNNZIEimFJUPMtxIjjr73ZHunjAKV8SlFI9scyxH3blDyYxJaPjc40MuA9EQ3tWJkbqlpBvUOaHi1xwbpA00zHnp4chZLslSv6TWs92Gb3lLT4iRUiU3P3c%2Fb11Cw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"mealstogo-5621c\",\"storageBucket\":\"mealstogo-5621c.appspot.com\"}","GCLOUD_PROJECT":"mealstogo-5621c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/mealstogo-5621c/locations/us-central1/functions/placesNearby"},"runtime":"nodejs18","buildId":"f99e45ab-c1f4-483d-b486-909be3f32171","buildName":"projects/938103308440/locations/us-central1/builds/f99e45ab-c1f4-483d-b486-909be3f32171","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"3","updateTime":"2023-02-07T13:43:38Z","buildId":"c1b8a0fd-8761-46e3-b70b-3ae0d3324fce","buildName":"projects/938103308440/locations/us-central1/builds/c1b8a0fd-8761-46e3-b70b-3ae0d3324fce"}}
+[debug] [2023-02-07T13:43:41.202Z] [update-default-us-central1-geocode] Retrying task index 0
+[debug] [2023-02-07T13:43:41.202Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/bWVhbHN0b2dvLTU2MjFjL3VzLWNlbnRyYWwxL2dlb2NvZGUvRktyY0xBck9WemM [none]
+[debug] [2023-02-07T13:43:41.750Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/bWVhbHN0b2dvLTU2MjFjL3VzLWNlbnRyYWwxL2dlb2NvZGUvRktyY0xBck9WemM 200
+[debug] [2023-02-07T13:43:41.750Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/bWVhbHN0b2dvLTU2MjFjL3VzLWNlbnRyYWwxL2dlb2NvZGUvRktyY0xBck9WemM {"name":"operations/bWVhbHN0b2dvLTU2MjFjL3VzLWNlbnRyYWwxL2dlb2NvZGUvRktyY0xBck9WemM","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/mealstogo-5621c/locations/us-central1/functions/geocode","type":"UPDATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/mealstogo-5621c/locations/us-central1/functions/geocode","httpsTrigger":{"url":"https://us-central1-mealstogo-5621c.cloudfunctions.net/geocode","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"geocode","updateTime":"2023-02-07T12:41:24.525Z","versionId":"2","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ff8dd85e6d42beee26fe3618b97b28ec1244caf2"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-829909479488.us-central1.cloudfunctions.appspot.com/ee44abb3-b08a-4055-911f-4446dc2df4bf.zip?GoogleAccessId=service-938103308440@gcf-admin-robot.iam.gserviceaccount.com&Expires=1675779216&Signature=U2D6lCktqoCwuvm5%2BnOf0NUtzrEA032viS%2BunwglravOPcComlDCX0u5x2Y7NvUufn7%2F5rNpflyHKpqjAqi%2FVsgjn37hBvQgbMiqm5dDJkn%2FBUHaTs%2Fj%2BP0O18x7rTilvWntYRhvGqY%2BED7tWTdITuFvmuxcgjuMpBWzK0UIelFyZXHdbnwwFpDGUxsAVjWu47SGcgFQAgU45uAmD5PdqDQQ8XNNZIEimFJUPMtxIjjr73ZHunjAKV8SlFI9scyxH3blDyYxJaPjc40MuA9EQ3tWJkbqlpBvUOaHi1xwbpA00zHnp4chZLslSv6TWs92Gb3lLT4iRUiU3P3c%2Fb11Cw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"mealstogo-5621c\",\"storageBucket\":\"mealstogo-5621c.appspot.com\"}","GCLOUD_PROJECT":"mealstogo-5621c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/mealstogo-5621c/locations/us-central1/functions/placesNearby"},"runtime":"nodejs18","buildId":"f99e45ab-c1f4-483d-b486-909be3f32171","buildName":"projects/938103308440/locations/us-central1/builds/f99e45ab-c1f4-483d-b486-909be3f32171","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"3","updateTime":"2023-02-07T13:43:38Z","buildId":"c1b8a0fd-8761-46e3-b70b-3ae0d3324fce","buildName":"projects/938103308440/locations/us-central1/builds/c1b8a0fd-8761-46e3-b70b-3ae0d3324fce"}}
+[debug] [2023-02-07T13:43:43.761Z] [update-default-us-central1-geocode] Retrying task index 0
+[debug] [2023-02-07T13:43:43.762Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/bWVhbHN0b2dvLTU2MjFjL3VzLWNlbnRyYWwxL2dlb2NvZGUvRktyY0xBck9WemM [none]
+[debug] [2023-02-07T13:43:44.317Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/bWVhbHN0b2dvLTU2MjFjL3VzLWNlbnRyYWwxL2dlb2NvZGUvRktyY0xBck9WemM 200
+[debug] [2023-02-07T13:43:44.317Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/bWVhbHN0b2dvLTU2MjFjL3VzLWNlbnRyYWwxL2dlb2NvZGUvRktyY0xBck9WemM {"name":"operations/bWVhbHN0b2dvLTU2MjFjL3VzLWNlbnRyYWwxL2dlb2NvZGUvRktyY0xBck9WemM","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/mealstogo-5621c/locations/us-central1/functions/geocode","type":"UPDATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/mealstogo-5621c/locations/us-central1/functions/geocode","httpsTrigger":{"url":"https://us-central1-mealstogo-5621c.cloudfunctions.net/geocode","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"geocode","updateTime":"2023-02-07T12:41:24.525Z","versionId":"2","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"ff8dd85e6d42beee26fe3618b97b28ec1244caf2"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-829909479488.us-central1.cloudfunctions.appspot.com/ee44abb3-b08a-4055-911f-4446dc2df4bf.zip?GoogleAccessId=service-938103308440@gcf-admin-robot.iam.gserviceaccount.com&Expires=1675779216&Signature=U2D6lCktqoCwuvm5%2BnOf0NUtzrEA032viS%2BunwglravOPcComlDCX0u5x2Y7NvUufn7%2F5rNpflyHKpqjAqi%2FVsgjn37hBvQgbMiqm5dDJkn%2FBUHaTs%2Fj%2BP0O18x7rTilvWntYRhvGqY%2BED7tWTdITuFvmuxcgjuMpBWzK0UIelFyZXHdbnwwFpDGUxsAVjWu47SGcgFQAgU45uAmD5PdqDQQ8XNNZIEimFJUPMtxIjjr73ZHunjAKV8SlFI9scyxH3blDyYxJaPjc40MuA9EQ3tWJkbqlpBvUOaHi1xwbpA00zHnp4chZLslSv6TWs92Gb3lLT4iRUiU3P3c%2Fb11Cw%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"mealstogo-5621c\",\"storageBucket\":\"mealstogo-5621c.appspot.com\"}","GCLOUD_PROJECT":"mealstogo-5621c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/mealstogo-5621c/locations/us-central1/functions/placesNearby"},"runtime":"nodejs18","buildId":"f99e45ab-c1f4-483d-b486-909be3f32171","buildName":"projects/938103308440/locations/us-central1/builds/f99e45ab-c1f4-483d-b486-909be3f32171","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"3","updateTime":"2023-02-07T13:43:38Z","buildId":"c1b8a0fd-8761-46e3-b70b-3ae0d3324fce","buildName":"projects/938103308440/locations/us-central1/builds/c1b8a0fd-8761-46e3-b70b-3ae0d3324fce"}}
+[debug] [2023-02-07T13:43:52.227Z] ----------------------------------------------------------------------
+[debug] [2023-02-07T13:43:52.229Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Web-Desk\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions
+[debug] [2023-02-07T13:43:52.229Z] CLI Version:   11.22.0
+[debug] [2023-02-07T13:43:52.229Z] Platform:      win32
+[debug] [2023-02-07T13:43:52.229Z] Node Version:  v18.14.0
+[debug] [2023-02-07T13:43:52.230Z] Time:          Tue Feb 07 2023 14:43:52 GMT+0100 (Central European Standard Time)
+[debug] [2023-02-07T13:43:52.230Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-07T13:43:52.280Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-07T13:43:52.281Z] > authorizing via signed-in user (taharboussak@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2023-02-07T13:43:52.289Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-02-07T13:43:52.289Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-02-07T13:43:52.292Z] [hub] writing locator at C:\Users\Web-Desk\AppData\Local\Temp\hub-mealstogo-5621c.json
+[debug] [2023-02-07T13:43:52.306Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-02-07T13:43:52.306Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-02-07T13:43:52.306Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[debug] [2023-02-07T13:43:52.308Z] defaultcredentials: writing to file C:\Users\Web-Desk\AppData\Roaming\firebase\taharboussak_gmail_com_application_default_credentials.json
+[debug] [2023-02-07T13:43:52.316Z] Setting GAC to C:\Users\Web-Desk\AppData\Roaming\firebase\taharboussak_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Web-Desk\\AppData\\Roaming\\firebase\\taharboussak_gmail_com_application_default_credentials.json"}}
+[debug] [2023-02-07T13:43:52.318Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c/adminSdkConfig [none]
+[debug] [2023-02-07T13:43:52.817Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c/adminSdkConfig 200
+[debug] [2023-02-07T13:43:52.817Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c/adminSdkConfig {"projectId":"mealstogo-5621c","storageBucket":"mealstogo-5621c.appspot.com"}
+[debug] [2023-02-07T13:43:52.828Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-02-07T13:43:52.828Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-02-07T13:43:52.828Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\Web-Desk\\.cache\\firebase\\emulators\\ui-v1.11.2\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\Web-Desk\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.11.2\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-02-07T13:43:52.916Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-02-07T13:43:52.916Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\Web-Desk\\Documents\\RN Projects\\MealsToGo\\functions\" for Cloud Functions..."}}
+[debug] [2023-02-07T13:43:53.094Z] Validating nodejs source
+[debug] [2023-02-07T13:43:54.179Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.3.26",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^4.2.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2023-02-07T13:43:54.179Z] Building nodejs source
+[debug] [2023-02-07T13:43:54.180Z] Failed to find version of module node: reached end of search path C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2023-02-07T13:43:54.181Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-02-07T13:43:54.185Z] Found firebase-functions binary at 'C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions\node_modules\.bin\firebase-functions'
+[debug] [2023-02-07T13:43:54.328Z] Serving at port 8278
+
+[debug] [2023-02-07T13:43:54.542Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"geocode"},"placesNearby":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"placesNearby"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-02-07T13:43:54.547Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: geocode, placesNearby. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: geocode, placesNearby."}}
+[info] +  functions[us-central1-geocode]: http function initialized (http://127.0.0.1:5001/mealstogo-5621c/us-central1/geocode). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/mealstogo-5621c/us-central1/geocode)."}}
+[info] +  functions[us-central1-placesNearby]: http function initialized (http://127.0.0.1:5001/mealstogo-5621c/us-central1/placesNearby). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/mealstogo-5621c/us-central1/placesNearby)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2023-02-07T13:47:49.360Z] File C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions\places\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Web-Desk\\Documents\\RN Projects\\MealsToGo\\functions\\places\\index.js changed, reloading triggers"}}
+[debug] [2023-02-07T13:47:50.372Z] Validating nodejs source
+[debug] [2023-02-07T13:47:51.587Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.3.26",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^4.2.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2023-02-07T13:47:51.587Z] Building nodejs source
+[debug] [2023-02-07T13:47:51.587Z] Failed to find version of module node: reached end of search path C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2023-02-07T13:47:51.588Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-02-07T13:47:51.592Z] Found firebase-functions binary at 'C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions\node_modules\.bin\firebase-functions'
+[debug] [2023-02-07T13:47:51.732Z] Serving at port 8635
+
+[debug] [2023-02-07T13:47:51.946Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"geocode"},"placesNearby":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"placesNearby"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-02-07T13:47:51.949Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: geocode, placesNearby. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: geocode, placesNearby."}}
+[debug] [2023-02-07T13:48:28.379Z] File C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions\places\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Web-Desk\\Documents\\RN Projects\\MealsToGo\\functions\\places\\index.js changed, reloading triggers"}}
+[debug] [2023-02-07T13:48:29.383Z] Validating nodejs source
+[debug] [2023-02-07T13:48:30.470Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.3.26",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^4.2.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2023-02-07T13:48:30.470Z] Building nodejs source
+[debug] [2023-02-07T13:48:30.470Z] Failed to find version of module node: reached end of search path C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2023-02-07T13:48:30.471Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-02-07T13:48:30.474Z] Found firebase-functions binary at 'C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions\node_modules\.bin\firebase-functions'
+[debug] [2023-02-07T13:48:30.614Z] Serving at port 8481
+
+[debug] [2023-02-07T13:48:30.830Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"geocode"},"placesNearby":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"placesNearby"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-02-07T13:48:30.833Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: geocode, placesNearby. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: geocode, placesNearby."}}
+[debug] [2023-02-07T13:49:16.435Z] File C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions\places\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Web-Desk\\Documents\\RN Projects\\MealsToGo\\functions\\places\\index.js changed, reloading triggers"}}
+[debug] [2023-02-07T13:49:17.439Z] Validating nodejs source
+[debug] [2023-02-07T13:49:18.571Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.3.26",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^4.2.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2023-02-07T13:49:18.571Z] Building nodejs source
+[debug] [2023-02-07T13:49:18.571Z] Failed to find version of module node: reached end of search path C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[debug] [2023-02-07T13:49:18.572Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-02-07T13:49:18.575Z] Found firebase-functions binary at 'C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions\node_modules\.bin\firebase-functions'
+[debug] [2023-02-07T13:49:18.713Z] Serving at port 8813
+
+[debug] [2023-02-07T13:49:18.926Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"geocode"},"placesNearby":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"placesNearby"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-02-07T13:49:18.929Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: geocode, placesNearby. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: geocode, placesNearby."}}
+[debug] [2023-02-07T13:49:41.670Z] [work-queue] {"queuedWork":["/mealstogo-5621c/us-central1/geocode-2023-02-07T13:49:41.670Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2023-02-07T13:49:41.671Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/mealstogo-5621c/us-central1/geocode-2023-02-07T13:49:41.670Z"],"workRunningCount":1}
+[debug] [2023-02-07T13:49:41.671Z] Accepted request GET /mealstogo-5621c/us-central1/geocode?city=paris&mock=false --> us-central1-geocode
+[debug] [2023-02-07T13:49:41.671Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-02-07T13:49:41.672Z] [functions] Got req.url=/mealstogo-5621c/us-central1/geocode?city=paris&mock=false, mapping to path=/?city=paris&mock=false {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/mealstogo-5621c/us-central1/geocode?city=paris&mock=false, mapping to path=/?city=paris&mock=false"}}
+[debug] [2023-02-07T13:49:41.677Z] [worker-pool] addWorker(us-central1-geocode) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-geocode)"}}
+[debug] [2023-02-07T13:49:41.677Z] [worker-pool] Adding worker with key us-central1-geocode, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-geocode, total=1"}}
+[debug] [2023-02-07T13:49:42.524Z] [runtime-status] [14272] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"C:\\Users\\Web-Desk\\Documents\\RN Projects\\MealsToGo\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [14272] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"C:\\\\Users\\\\Web-Desk\\\\Documents\\\\RN Projects\\\\MealsToGo\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2023-02-07T13:49:42.524Z] [runtime-status] [14272] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"C:\\Users\\Web-Desk\\Documents\\RN Projects\\MealsToGo\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [14272] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"C:\\\\Users\\\\Web-Desk\\\\Documents\\\\RN Projects\\\\MealsToGo\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[warn] !  Found .runtimeconfig.json but the JSON format is invalid. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"Found .runtimeconfig.json but the JSON format is invalid."}}
+[debug] [2023-02-07T13:49:42.525Z] [runtime-status] [14272] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [14272] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2023-02-07T13:49:42.525Z] [runtime-status] [14272] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"C:\\Users\\Web-Desk\\Documents\\RN Projects\\MealsToGo\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [14272] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"C:\\\\Users\\\\Web-Desk\\\\Documents\\\\RN Projects\\\\MealsToGo\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2023-02-07T13:49:42.671Z] [runtime-status] [14272] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [14272] Checked functions.config() {\"config\":{}}"}}
+[debug] [2023-02-07T13:49:42.672Z] [runtime-status] [14272] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.2.1","resolution":"C:\\Users\\Web-Desk\\Documents\\RN Projects\\MealsToGo\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [14272] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"C:\\\\Users\\\\Web-Desk\\\\Documents\\\\RN Projects\\\\MealsToGo\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}}"}}
+[debug] [2023-02-07T13:49:42.672Z] [runtime-status] [14272] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"C:\\Users\\Web-Desk\\Documents\\RN Projects\\MealsToGo\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [14272] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"C:\\\\Users\\\\Web-Desk\\\\Documents\\\\RN Projects\\\\MealsToGo\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2023-02-07T13:49:42.673Z] [runtime-status] [14272] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"C:\\Users\\Web-Desk\\Documents\\RN Projects\\MealsToGo\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [14272] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"C:\\\\Users\\\\Web-Desk\\\\Documents\\\\RN Projects\\\\MealsToGo\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2023-02-07T13:49:42.675Z] [runtime-status] [14272] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"C:\\Users\\Web-Desk\\Documents\\RN Projects\\MealsToGo\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [14272] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"C:\\\\Users\\\\Web-Desk\\\\Documents\\\\RN Projects\\\\MealsToGo\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2023-02-07T13:49:42.675Z] [runtime-status] [14272] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"C:\\Users\\Web-Desk\\Documents\\RN Projects\\MealsToGo\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [14272] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"C:\\\\Users\\\\Web-Desk\\\\Documents\\\\RN Projects\\\\MealsToGo\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}}"}}
+[debug] [2023-02-07T13:49:42.733Z] [runtime-status] [14272] Functions runtime initialized. {"cwd":"C:\\Users\\Web-Desk\\Documents\\RN Projects\\MealsToGo\\functions","node_version":"18.14.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [14272] Functions runtime initialized. {\"cwd\":\"C:\\\\Users\\\\Web-Desk\\\\Documents\\\\RN Projects\\\\MealsToGo\\\\functions\",\"node_version\":\"18.14.0\"}"}}
+[debug] [2023-02-07T13:49:42.733Z] [runtime-status] [14272] Listening to port: \\?\pipe\fire_emu_3eba2563169fb6bc {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"[runtime-status] [14272] Listening to port: \\\\?\\pipe\\fire_emu_3eba2563169fb6bc"}}
+[debug] [2023-02-07T13:49:42.791Z] [worker-us-central1-geocode-1627b25e-892f-4451-a734-d8413aff14c1]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-geocode-1627b25e-892f-4451-a734-d8413aff14c1]: IDLE"}}
+[debug] [2023-02-07T13:49:42.791Z] [worker-pool] submitRequest(triggerId=us-central1-geocode) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-geocode)"}}
+[debug] [2023-02-07T13:49:42.791Z] [worker-us-central1-geocode-1627b25e-892f-4451-a734-d8413aff14c1]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-geocode-1627b25e-892f-4451-a734-d8413aff14c1]: BUSY"}}
+[info] i  functions: Beginning execution of "geocode" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"Beginning execution of \"geocode\""}}
+[debug] [2023-02-07T13:49:43.174Z] [worker-us-central1-geocode-1627b25e-892f-4451-a734-d8413aff14c1]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-geocode-1627b25e-892f-4451-a734-d8413aff14c1]: IDLE"}}
+[debug] [2023-02-07T13:49:43.174Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[info] i  functions: Finished "geocode" in 379.3284ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-geocode"},"extension":{},"message":"Finished \"geocode\" in 379.3284ms"}}

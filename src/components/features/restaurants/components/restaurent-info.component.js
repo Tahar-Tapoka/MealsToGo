@@ -18,29 +18,21 @@ import { Favourite } from '../../../favourites/favourite.component';
 import { View } from 'react-native';
 
 const RestaurantInfo = ({ restaurant = {} }) => {
+  // const { name, icon, photos, address, isOpenNow, rating, isClosedTemporarily, placeId } =
+  //   restaurant;
+
   const {
     name = 'Some Restaurant',
     icon = 'https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png',
     photos = [
       'https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg',
     ],
-    address = '100 some street, Akbou',
+    address = '100 some random street',
     isOpenNow = true,
     rating = 4,
     isClosedTemporarily = true,
     placeId,
   } = restaurant;
-
-  // const {
-  //   name,
-  //   icon,
-  //   photos = [],
-  //   address,
-  //   isOpenNow,
-  //   rating,
-  //   isClosedTemporarily,
-  //   placeId,
-  // } = restaurant;
   const ratingArray = Array.from(new Array(Math.floor(rating)));
 
   return (
