@@ -5,10 +5,10 @@ import { SafeArea } from '../../../utility/safe-area.component';
 import RestaurantInfo from '../components/restaurent-info.component';
 
 export const RestaurantDetailsScreen = ({ route }) => {
-  const { item } = route.params;
+  const { restaurant } = route.params;
   return (
     <SafeArea>
-      <RestaurantInfo restaurant={item} />
+      <RestaurantInfo restaurant={restaurant} />
       <ScrollView>
         <List.Section>
           <List.Accordion

@@ -1,5 +1,5 @@
 import camelize from 'camelize';
-import { host, liveHost } from '../../utils/env';
+import { host, liveHost, isMock } from '../../utils/env';
 
 export const restaurantRequest = (location = '51.219448,4.402464') => {
   return fetch(`${liveHost}/placesNearby?location=${location}`)

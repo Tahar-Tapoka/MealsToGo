@@ -39,18 +39,18 @@ export const RestaurantScreen = ({ navigation }) => {
         <FadeInView>
           <RestaurantList
             data={restaurantContext.restaurants}
-            renderItem={({ item }) => {
+            renderItem={({ restaurant }) => {
               return (
                 <TouchableOpacity
                   onPress={() => {
-                    navigation.navigate('RestaurantDetail', { item });
+                    navigation.navigate('RestaurantDetail', { restaurant });
                   }}
                 >
-                  <RestaurantInfo restaurant={item} />
+                  <RestaurantInfo restaurant={restaurant} />
                 </TouchableOpacity>
               );
             }}
-            key={({ item }) => item.placeId}
+            key={({ restaurant }) => restaurant.placeId}
           />
         </FadeInView>
       )}
