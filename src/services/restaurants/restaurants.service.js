@@ -1,26 +1,21 @@
 import camelize from 'camelize';
-import { host, liveHost, isMock } from '../../utils/env';
+import { host, isMock } from '../../utils/env';
 
-export const restaurantRequest = (location = '51.219448,4.402464') => {
-  return fetch(`${liveHost}/placesNearby?location=${location}`)
-    .then((response) => {
-      return response.json();
-    })
-    .catch((error) => {
-      console.error('err: ', error);
-    });
+export const restaurantRequest = (location) => {
+  return fetch(`${host}/placesNearby?location=${location}&mock=${isMock}`).then((res) => {
+    return res.json();
+  });
 };
 
 export const restaurantsTransform = ({ results = [] }) => {
-  const mappedResults = results.map((res) => {
+  const mappedResults = results.map((restaurant) => {
     return {
-      ...res,
-      isClosedTemporarily: res.business_status === 'CLOSED_TEMPORARILY',
-      isOpenNow: res.opening_hours && res.opening_hours.open_now,
-      address: res.vicinity,
+      ...restaurant,
+      address: restaurant.vicinity,
+      isOpenNow: restaurant.opening_hours && restaurant.opening_hours.open_now,
+      isClosedTemporarily: restaurant.business_status === 'CLOSED_TEMPORARILY',
     };
   });
-  const newResults = camelize(mappedResults);
-  //console.log(mappedResults);
-  return newResults;
+
+  return camelize(mappedResults);
 };

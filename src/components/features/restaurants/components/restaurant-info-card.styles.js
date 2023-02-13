@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import { Image, Text, View } from 'react-native';
-import { Card } from 'react-native-paper';
+import { Button, Card } from 'react-native-paper';
+import { colors } from '../../../../infrastructure/theme/colors';
 
 export const RestaurantCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
@@ -46,4 +47,14 @@ export const SectionEnd = styled(View)`
 export const Icon = styled(Image)`
 width: 15px
 height: 15px
+`;
+
+export const OrderButton = styled(Button).attrs({
+  buttonColor: colors.brand.primary,
+  icon: 'cash-plus',
+  mode: 'contained',
+})`
+padding:${(props) => props.theme.space[2]}
+width:80%
+align-self:center
 `;

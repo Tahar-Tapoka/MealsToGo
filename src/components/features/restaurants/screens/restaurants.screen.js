@@ -17,7 +17,7 @@ export const RestaurantList = styled(FlatList).attrs({
 })``;
 
 export const RestaurantScreen = ({ navigation }) => {
-  const restaurantContext = useContext(RestaurantContext);
+  const { isLoading, restaurants, error } = useContext(RestaurantContext);
   const { favourites } = useContext(FavouritesContext);
   const [isToggled, setIsToggled] = useState(false);
 
@@ -25,7 +25,7 @@ export const RestaurantScreen = ({ navigation }) => {
     <SafeArea>
       <Search onFavouritesToggled={() => setIsToggled((tg) => !tg)} favouritesToggled={isToggled} />
       {isToggled && <FavouritesBar favourites={favourites} onNavigate={navigation.navigate} />}
-      {restaurantContext.isLoading && (
+      {isLoading && (
         <View style={{ position: 'absolute', top: '50%', left: '50%' }}>
           <ActivityIndicator
             animating={true}
@@ -35,22 +35,22 @@ export const RestaurantScreen = ({ navigation }) => {
           />
         </View>
       )}
-      {!restaurantContext.isLoading && (
+      {!isLoading && (
         <FadeInView>
           <RestaurantList
-            data={restaurantContext.restaurants}
-            renderItem={({ restaurant }) => {
+            data={restaurants}
+            renderItem={({ item }) => {
               return (
                 <TouchableOpacity
                   onPress={() => {
-                    navigation.navigate('RestaurantDetail', { restaurant });
+                    navigation.navigate('RestaurantDetail', { restaurant: item });
                   }}
                 >
-                  <RestaurantInfo restaurant={restaurant} />
+                  <RestaurantInfo restaurant={item} />
                 </TouchableOpacity>
               );
             }}
-            key={({ restaurant }) => restaurant.placeId}
+            key={({ item }) => item.placeId}
           />
         </FadeInView>
       )}

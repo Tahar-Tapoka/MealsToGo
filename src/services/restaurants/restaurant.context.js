@@ -5,9 +5,9 @@ import { restaurantRequest, restaurantsTransform } from './restaurants.service';
 export const RestaurantContext = createContext();
 
 export const RestaurantContextProvider = ({ children }) => {
-  const [restaurants, setRestaurants] = useState([1, 2, 3, 4, 5, 6]);
+  const [restaurants, setRestaurants] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState();
+  const [error, setError] = useState(null);
   const locationContext = useContext(LocationContext);
 
   const retrieveRestaurants = (loc) => {

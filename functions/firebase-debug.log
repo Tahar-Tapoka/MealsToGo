@@ -1,42 +1,42 @@
-[debug] [2023-02-09T08:20:09.147Z] ----------------------------------------------------------------------
-[debug] [2023-02-09T08:20:09.149Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Web-Desk\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions
-[debug] [2023-02-09T08:20:09.149Z] CLI Version:   11.22.0
-[debug] [2023-02-09T08:20:09.149Z] Platform:      win32
-[debug] [2023-02-09T08:20:09.149Z] Node Version:  v18.14.0
-[debug] [2023-02-09T08:20:09.150Z] Time:          Thu Feb 09 2023 09:20:09 GMT+0100 (Central European Standard Time)
-[debug] [2023-02-09T08:20:09.150Z] ----------------------------------------------------------------------
+[debug] [2023-02-13T08:04:21.471Z] ----------------------------------------------------------------------
+[debug] [2023-02-13T08:04:21.472Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Web-Desk\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions
+[debug] [2023-02-13T08:04:21.473Z] CLI Version:   11.22.0
+[debug] [2023-02-13T08:04:21.473Z] Platform:      win32
+[debug] [2023-02-13T08:04:21.473Z] Node Version:  v18.14.0
+[debug] [2023-02-13T08:04:21.474Z] Time:          Mon Feb 13 2023 09:04:21 GMT+0100 (Central European Standard Time)
+[debug] [2023-02-13T08:04:21.474Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2023-02-09T08:20:09.201Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2023-02-09T08:20:09.201Z] > authorizing via signed-in user (taharboussak@gmail.com)
+[debug] [2023-02-13T08:04:21.525Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-13T08:04:21.526Z] > authorizing via signed-in user (taharboussak@gmail.com)
 [info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
-[debug] [2023-02-09T08:20:09.209Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
-[debug] [2023-02-09T08:20:09.210Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
-[debug] [2023-02-09T08:20:09.213Z] [hub] writing locator at C:\Users\Web-Desk\AppData\Local\Temp\hub-mealstogo-5621c.json
-[debug] [2023-02-09T08:20:09.223Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
-[debug] [2023-02-09T08:20:09.224Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
-[debug] [2023-02-09T08:20:09.224Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[debug] [2023-02-13T08:04:21.533Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-02-13T08:04:21.534Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-02-13T08:04:21.538Z] [hub] writing locator at C:\Users\Web-Desk\AppData\Local\Temp\hub-mealstogo-5621c.json
+[debug] [2023-02-13T08:04:21.548Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-02-13T08:04:21.549Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-02-13T08:04:21.549Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
 [warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
-[debug] [2023-02-09T08:20:09.226Z] defaultcredentials: writing to file C:\Users\Web-Desk\AppData\Roaming\firebase\taharboussak_gmail_com_application_default_credentials.json
-[debug] [2023-02-09T08:20:09.228Z] Setting GAC to C:\Users\Web-Desk\AppData\Roaming\firebase\taharboussak_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Web-Desk\\AppData\\Roaming\\firebase\\taharboussak_gmail_com_application_default_credentials.json"}}
-[debug] [2023-02-09T08:20:09.229Z] > refreshing access token with scopes: []
-[debug] [2023-02-09T08:20:09.230Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
-[debug] [2023-02-09T08:20:09.231Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2023-02-09T08:20:09.618Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
-[debug] [2023-02-09T08:20:09.618Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
-[debug] [2023-02-09T08:20:09.628Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c/adminSdkConfig [none]
-[debug] [2023-02-09T08:20:10.142Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c/adminSdkConfig 200
-[debug] [2023-02-09T08:20:10.142Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c/adminSdkConfig {"projectId":"mealstogo-5621c","storageBucket":"mealstogo-5621c.appspot.com"}
-[debug] [2023-02-09T08:20:10.153Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
-[debug] [2023-02-09T08:20:10.153Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
-[debug] [2023-02-09T08:20:10.153Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\Web-Desk\\.cache\\firebase\\emulators\\ui-v1.11.2\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\Web-Desk\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.11.2\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[debug] [2023-02-13T08:04:21.551Z] defaultcredentials: writing to file C:\Users\Web-Desk\AppData\Roaming\firebase\taharboussak_gmail_com_application_default_credentials.json
+[debug] [2023-02-13T08:04:21.552Z] Setting GAC to C:\Users\Web-Desk\AppData\Roaming\firebase\taharboussak_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Web-Desk\\AppData\\Roaming\\firebase\\taharboussak_gmail_com_application_default_credentials.json"}}
+[debug] [2023-02-13T08:04:21.553Z] > refreshing access token with scopes: []
+[debug] [2023-02-13T08:04:21.555Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-02-13T08:04:21.555Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-13T08:04:21.930Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-02-13T08:04:21.930Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-02-13T08:04:21.944Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c/adminSdkConfig [none]
+[debug] [2023-02-13T08:04:22.447Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c/adminSdkConfig 200
+[debug] [2023-02-13T08:04:22.447Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-5621c/adminSdkConfig {"projectId":"mealstogo-5621c","storageBucket":"mealstogo-5621c.appspot.com"}
+[debug] [2023-02-13T08:04:22.463Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-02-13T08:04:22.463Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-02-13T08:04:22.464Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\Web-Desk\\.cache\\firebase\\emulators\\ui-v1.11.2\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\Web-Desk\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.11.2\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
 [info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
-[debug] [2023-02-09T08:20:10.243Z] Web / API server started at 127.0.0.1:4000
+[debug] [2023-02-13T08:04:22.556Z] Web / API server started at 127.0.0.1:4000
  {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
-[debug] [2023-02-09T08:20:10.243Z] Web / API server started at ::1:4000
+[debug] [2023-02-13T08:04:22.556Z] Web / API server started at ::1:4000
  {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
 [info] i  functions: Watching "C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\Web-Desk\\Documents\\RN Projects\\MealsToGo\\functions\" for Cloud Functions..."}}
-[debug] [2023-02-09T08:20:10.420Z] Validating nodejs source
-[debug] [2023-02-09T08:20:12.198Z] > [functions] package.json contents: {
+[debug] [2023-02-13T08:04:22.737Z] Validating nodejs source
+[debug] [2023-02-13T08:04:24.598Z] > [functions] package.json contents: {
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "scripts": {
@@ -53,26 +53,28 @@
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.3.26",
     "firebase-admin": "^10.0.2",
-    "firebase-functions": "^4.2.1"
+    "firebase-functions": "^4.2.1",
+    "stripe": "^11.10.0"
   },
   "devDependencies": {
     "firebase-functions-test": "^0.2.0"
   },
   "private": true
 }
-[debug] [2023-02-09T08:20:12.198Z] Building nodejs source
-[debug] [2023-02-09T08:20:12.198Z] Failed to find version of module node: reached end of search path C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions\node_modules
+[debug] [2023-02-13T08:04:24.598Z] Building nodejs source
+[debug] [2023-02-13T08:04:24.599Z] Failed to find version of module node: reached end of search path C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions\node_modules
 [info] +  functions: Using node@18 from host. 
-[debug] [2023-02-09T08:20:12.200Z] Could not find functions.yaml. Must use http discovery
-[debug] [2023-02-09T08:20:12.204Z] Found firebase-functions binary at 'C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions\node_modules\.bin\firebase-functions'
-[debug] [2023-02-09T08:20:12.344Z] Serving at port 8767
+[debug] [2023-02-13T08:04:24.600Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-02-13T08:04:24.604Z] Found firebase-functions binary at 'C:\Users\Web-Desk\Documents\RN Projects\MealsToGo\functions\node_modules\.bin\firebase-functions'
+[debug] [2023-02-13T08:04:24.782Z] Serving at port 8749
 
-[debug] [2023-02-09T08:20:12.561Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"geocode"},"placesNearby":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"placesNearby"}},"specVersion":"v1alpha1","requiredAPIs":[]}
-[debug] [2023-02-09T08:20:12.566Z] shutdown requested via /__/quitquitquit
+[debug] [2023-02-13T08:04:25.107Z] Got response from /__/functions.yaml {"endpoints":{"geocode":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"geocode"},"placesNearby":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"placesNearby"},"pay":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"pay"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-02-13T08:04:25.113Z] shutdown requested via /__/quitquitquit
 
-[info] +  functions: Loaded functions definitions from source: geocode, placesNearby. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: geocode, placesNearby."}}
+[info] +  functions: Loaded functions definitions from source: geocode, placesNearby, pay. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: geocode, placesNearby, pay."}}
 [info] +  functions[us-central1-geocode]: http function initialized (http://127.0.0.1:5001/mealstogo-5621c/us-central1/geocode). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/mealstogo-5621c/us-central1/geocode)."}}
 [info] +  functions[us-central1-placesNearby]: http function initialized (http://127.0.0.1:5001/mealstogo-5621c/us-central1/placesNearby). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/mealstogo-5621c/us-central1/placesNearby)."}}
+[info] +  functions[us-central1-pay]: http function initialized (http://127.0.0.1:5001/mealstogo-5621c/us-central1/pay). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/mealstogo-5621c/us-central1/pay)."}}
 [info] 
 ┌─────────────────────────────────────────────────────────────┐
 │ ✔  All emulators ready! It is now safe to connect your app. │
