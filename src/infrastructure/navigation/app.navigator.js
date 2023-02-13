@@ -10,6 +10,7 @@ import { RestaurantContextProvider } from '../../services/restaurants/restaurant
 import { SettingsNavigator } from './settings.navigator';
 import { CartContextProvider } from '../../services/cart/cart.context';
 import { CheckoutNavigator } from './checkout.navigator';
+import { colors } from '../theme/colors';
 
 const Tab = createBottomTabNavigator();
 
@@ -24,8 +25,8 @@ const createScreenOptions = ({ route }) => {
   const iconName = TAB_ICON[route.name];
   return {
     tabBarIcon: ({ size, color }) => <Ionicons name={iconName} size={size} color={color} />,
-    activeTintColor: 'tomato',
-    inactiveTintColor: 'gray',
+    tabBarActiveTintColor: colors.brand.primary,
+    tabBarInactiveTintColor: colors.brand.muted,
     headerShown: false,
   };
 };
@@ -39,7 +40,7 @@ export const AppNavigator = () => (
             <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
             <Tab.Screen name="Checkouts" component={CheckoutNavigator} />
             <Tab.Screen name="Maps" component={MapsScreen} />
-            <Tab.Screen name="SettingsNav" component={SettingsNavigator} />
+            <Tab.Screen name="Settings" component={SettingsNavigator} />
           </Tab.Navigator>
         </CartContextProvider>
       </RestaurantContextProvider>

@@ -3,9 +3,11 @@ import styled from 'styled-components/native';
 import { Spacer } from '../spacer/spacer.component';
 import { CompactRestaurantInfo } from '../restaurant/compact-restaurant-info.component';
 import { Text } from '../typography/text.component';
+import { Card } from 'react-native-paper';
 
-const FavouritesWrapper = styled.View`
+const FavouritesWrapper = styled(Card).attrs({ elevation: 3 })`
   padding: 10px;
+  z-index: 999;
 `;
 export const FavouritesBar = ({ favourites, onNavigate }) => {
   if (!favourites.length) {

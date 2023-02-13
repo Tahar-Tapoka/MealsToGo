@@ -10,7 +10,7 @@ export const SettingsNavigator = () => {
     <Stack.Navigator
       screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }}
     >
-      <Stack.Screen options={{ header: () => null }} name="Settings" component={SettingsScreen} />
+      <Stack.Screen options={{ header: () => null }} name="Setting" component={SettingsScreen} />
       <Stack.Screen name="Favourites" component={FavoritessScreen} />
       <Stack.Screen name="CameraScreen" component={CameraScreen} />
     </Stack.Navigator>

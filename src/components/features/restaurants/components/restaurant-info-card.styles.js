@@ -6,6 +6,8 @@ import { colors } from '../../../../infrastructure/theme/colors';
 export const RestaurantCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
   margin-top: ${(props) => props.theme.space[1]};
+  width: 95%;
+  align-self: center;
 `;
 
 export const RestaurantCardCover = styled(Card.Cover)`

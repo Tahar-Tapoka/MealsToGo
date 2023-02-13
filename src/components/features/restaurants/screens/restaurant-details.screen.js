@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ScrollView } from 'react-native';
-import { List } from 'react-native-paper';
+import { Divider, List } from 'react-native-paper';
 import { CartContext } from '../../../../services/cart/cart.context';
 import { Spacer } from '../../../spacer/spacer.component';
 import { SafeArea } from '../../../utility/safe-area.component';
@@ -20,27 +20,35 @@ export const RestaurantDetailsScreen = ({ route, navigation }) => {
     <SafeArea>
       <RestaurantInfo restaurant={restaurant} />
       <ScrollView>
-        <List.Section>
+        <List.Section style={{ marginLeft: 10 }}>
           <List.Accordion
             title="Breakfast"
             left={(props) => <List.Icon {...props} icon="bread-slice" />}
           >
+            <Divider />
             <List.Item title="First item" />
+            <Divider />
             <List.Item title="Second item" />
           </List.Accordion>
+          <Divider />
           <List.Accordion title="Lunch" left={(props) => <List.Icon {...props} icon="hamburger" />}>
             <List.Item title="First item" />
+            <Divider />
             <List.Item title="Second item" />
           </List.Accordion>
+          <Divider />
           <List.Accordion
             title="Dinner"
             left={(props) => <List.Icon {...props} icon="food-variant" />}
           >
             <List.Item title="First item" />
+            <Divider />
             <List.Item title="Second item" />
           </List.Accordion>
+          <Divider />
           <List.Accordion title="Drinks" left={(props) => <List.Icon {...props} icon="beer" />}>
             <List.Item title="First item" />
+            <Divider />
             <List.Item title="Second item" />
           </List.Accordion>
         </List.Section>
